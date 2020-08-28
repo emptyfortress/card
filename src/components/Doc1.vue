@@ -1,6 +1,7 @@
 <template lang="pug">
 .doc
-	div.zg  заголовок
+	div.zg
+		Zag
 	div.but  кнопки действий
 	div.main  основная.область
 	div.attr атрибуты
@@ -9,6 +10,7 @@
 </template>
 
 <script>
+import Zag from '@/components/Zag'
 
 export default {
 	props: {
@@ -17,6 +19,10 @@ export default {
 			default: 'dark'
 		}
 	},
+	components: {
+		Zag,
+	},
+
 	data () {
 		return {
 		}
@@ -31,15 +37,18 @@ export default {
 .doc {
 	margin-bottom: 5rem;
 	display: grid;
-	gap: .5rem;
+	gap: 1rem;
 	grid-template-columns: repeat(8, 1fr);
 	grid-template-rows: repeat (min-content, auto);
 	> div {
 		background: #ccc;
-		height: 50px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		/* height: 50px; */
+		/* display: flex; */
+		/* justify-content: center; */
+		/* align-items: center; */
+	}
+	div:first-child {
+		background: none;
 	}
 	.zg {
 		grid-column: span 6;

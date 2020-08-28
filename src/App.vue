@@ -4,7 +4,7 @@ v-app
 	v-app-bar(app :color="maincolor" flat clipped-left elevation="2" ).pr-2
 		v-app-bar-nav-icon(color="#fff" @click="$store.commit('toggleDrawer')")
 		.logo(v-show="!$vuetify.breakpoint.mobile")
-			span Docsvision {{maincolor}}
+			span Docsvision
 		v-spacer
 		v-btn( href="" icon ).mr-3
 			v-icon(color="#fff") mdi-magnify
