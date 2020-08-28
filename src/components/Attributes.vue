@@ -1,14 +1,16 @@
 <template lang="pug">
 .attr
-	v-expansion-panels(tile flat v-model="one" name="attr")
-		v-expansion-panel
+	v-expansion-panels(tile flat v-model="one")
+		v-expansion-panel(value="0")
 			v-expansion-panel-header
 				.blockhd.rel Информация
 			v-expansion-panel-content
 				.section
 					template(v-for="item in attributes")
 						.label {{ item.label }}:
-						.value {{ item.value }}
+						.value 
+							v-icon(small v-if="item.icon") mdi-calendar
+							|{{ item.value }}
 
 </template>
 
@@ -16,22 +18,22 @@
 
 export default {
 	data: () => ({
-		one: [0],
+		one: 0,
 		attributes: [
-			{ id: 0, label: 'Вид СЗ', value: 'СЗ общая' },
-			{ id: 0, label: 'Рег. №', value: '16-1' },
-			{ id: 0, label: 'Дата рег.', value: '16.06.20' },
-			{ id: 0, label: 'Автор докум.', value: 'Макарова О.Л.' },
-			{ id: 0, label: 'Подразд.', value: '16 ОАП - Отдел автомазации проектированияи инф.технологий' },
-			{ id: 0, label: 'Тема', value: 'О создании рабочей группы' },
-			{ id: 0, label: 'Подписывает', value: 'Лебедской-Тамбиев М.А.' },
-			{ id: 0, label: 'Примеч.', value: 'Макет карточки' },
-			{ id: 0, label: 'Исполнители', value: 'Агаева И.' },
-			{ id: 0, label: 'Дата испол.', value: '18.06.20' },
-			{ id: 0, label: 'В отделы', value: 'ОАП, ТО' },
-			{ id: 0, label: 'Предв. №', value: '96-2020' },
-			{ id: 0, label: 'Дата созд.', value: '16.06.2020 19:25' },
-			{ id: 0, label: 'Создал', value: 'Сергиенко К.' },
+			{ id:  0, label: 'Вид СЗ', value: 'СЗ общая' },
+			{ id:  1, label: 'Рег. №', value: '16-1' },
+			{ id:  2, label: 'Дата рег.', value: '16.06.20', icon: true },
+			{ id:  3, label: 'Автор докум.', value: 'Макарова О.Л.' },
+			{ id:  4, label: 'Подразд.', value: '16 ОАП - Отдел автомазации проектированияи инф.технологий' },
+			{ id:  5, label: 'Тема', value: 'О создании рабочей группы' },
+			{ id:  6, label: 'Подписывает', value: 'Лебедской-Тамбиев М.А.' },
+			{ id:  7, label: 'Примеч.', value: 'Макет карточки' },
+			{ id:  8, label: 'Исполнители', value: 'Агаева И.' },
+			{ id:  9, label: 'Дата испол.', value: '18.06.20', icon: true },
+			{ id: 10, label: 'В отделы', value: 'ОАП, ТО' },
+			{ id: 11, label: 'Предв. №', value: '96-2020' },
+			{ id: 12, label: 'Дата созд.', value: '16.06.2020 19:25' },
+			{ id: 13, label: 'Создал', value: 'Сергиенко К.' },
 		],
 		
 	}),
@@ -59,6 +61,16 @@ export default {
 	}
 	.value {
 		color: $link;
+		cursor: pointer;
+		border-bottom: 1px dotted #fff;
+		.v-icon {
+			transform: translateY(-1px);
+			margin-right: 5px;
+		}
+		&:hover {
+			border-bottom: 1px dotted $link;
+		}
+
 	}
 }
 </style>
