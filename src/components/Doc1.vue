@@ -42,13 +42,13 @@ export default {
 	grid-template-rows: repeat (min-content, auto);
 	> div {
 		background: #ccc;
-		/* height: 50px; */
-		/* display: flex; */
-		/* justify-content: center; */
-		/* align-items: center; */
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 	div:first-child {
 		background: none;
+		display: block;
 	}
 	.zg {
 		grid-column: span 6;
