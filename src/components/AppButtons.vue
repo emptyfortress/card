@@ -2,7 +2,7 @@
 .action
 	v-btn(depressed :color="color" dark :block="block" ) На согласование
 	v-btn(depressed color="blue-grey lighten-4" :block="block") На доработку
-	v-btn(text :block="block" v-show="$vuetify.breakpoint.mdAndUp") Ещё
+	v-btn(text :block="block" v-show="$vuetify.breakpoint.mdAndUp || $vuetify.breakpoint.xs") Ещё
 	v-btn(depressed color="blue-grey lighten-4" v-show="$vuetify.breakpoint.sm") В архив
 	v-btn(outlined color="pink" v-show="$vuetify.breakpoint.sm") Удалить
 
