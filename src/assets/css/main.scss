@@ -17,3 +17,23 @@
 		height: 20px;
 	}
 }
+
+.blockhd {
+	text-transform: uppercase;
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: .15rem;
+	color: $link;
+}
+
+.theme--light.v-expansion-panels .v-expansion-panel {
+	border-bottom: 1px solid #ccc;
+	background: transparent;
+	&::before {
+		box-shadow: none;
+	}
+}
+.theme--light.v-expansion-panels .v-expansion-panel--active {
+	background: #fff;
+	border: 1px solid #ccc;
+}

@@ -11,15 +11,15 @@
 		p основная.область
 		p основная.область
 	.fix.attr
-		p атрибуты
-		p атрибуты
-
+		Attributes
 
 </template>
 
 <script>
 import Zag from '@/components/Zag'
 import AppButtons from '@/components/AppButtons'
+import Attributes from '@/components/Attributes'
+
 
 
 export default {
@@ -32,6 +32,7 @@ export default {
 	components: {
 		Zag,
 		AppButtons,
+		Attributes,
 	},
 
 	data () {
