@@ -4,10 +4,15 @@
 		Zag
 	.fix.but
 		AppButtons(:color="maincolor")
-	.fix.main
-		Main
-	.fix.attr
-		Attributes
+	v-tabs.tabs.fix
+		v-tab Item One
+		v-tab Item Two
+		v-tab Item Three
+
+	//- .fix.main
+	//- 	Main
+	//- .fix.attr
+	//- 	Attributes
 
 </template>
 
@@ -47,7 +52,7 @@ export default {
 .doc {
 	margin-bottom: 5rem;
 	display: grid;
-	gap: 2rem;
+	gap: 1rem 2rem;
 	grid-template-columns: repeat(14, 1fr);
 	@media (max-width:1264px) {
 		gap: 2rem 1rem;
@@ -70,6 +75,7 @@ export default {
 	}
 	.but {
 		grid-column: 11/15;
+		grid-row: 1/3;
 		@media (max-width: 1264px) {
 			grid-column: 10/15;
 			grid-row: 2/3;
@@ -79,6 +85,12 @@ export default {
 			grid-row: 2/3;
 		}
 	}
+	.tabs {
+		grid-column: 1/11;
+		border-top: 1px solid #ccc;
+	}
+
+
 	.main {
 		grid-column: 1/11;
 		grid-row: span 2;

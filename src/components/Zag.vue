@@ -22,7 +22,7 @@ export default {
 @import '@/assets/css/colors.scss';
 
 .mainzag {
-	border-bottom: 1px solid $blue-grey;
+	/* border-bottom: 1px solid $blue-grey; */
 }
 .top {
 	display: flex;
