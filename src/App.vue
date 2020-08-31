@@ -13,7 +13,8 @@ v-app
 	v-main
 		.subbar(:class="maincolor")
 		v-container.cont
-			router-view
+			v-slide-x-transition(mode="out-in")
+				router-view
 
 </template>
 
