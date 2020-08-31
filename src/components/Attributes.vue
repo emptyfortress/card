@@ -44,9 +44,6 @@ export default {
 <style scoped lang="scss">
 @import '@/assets/css/colors.scss';
 
-.theme--light.v-expansion-panels .v-expansion-panel--active {
-	border-radius: 5px;
-}
 .v-expansion-panel-header .blockhd {
 	flex-grow: 1;
 }

@@ -35,7 +35,9 @@
 }
 .theme--light.v-expansion-panels .v-expansion-panel--active {
 	background: #fff;
-	border: 1px solid #ccc;
+	/* border-radius: 0; */
+	box-shadow: 0 0px 3px rgba(0,0,0,.2);
+	border: 1px solid #dedede;
 }
 
 .v-expansion-panel-header > *:not(.v-expansion-panel-header__icon) {
