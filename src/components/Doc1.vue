@@ -4,20 +4,23 @@
 		Zag
 	.fix.but
 		AppButtons(:color="maincolor")
-	.tabs.fix
+	.fix.tabs
 		.tab(:class="{'active' : tab === 1}" @click="tab = 1") Главная
 		.tab(:class="{'active' : tab === 2}" @click="tab = 2") Ход согласования
 		.tab(:class="{'active' : tab === 3}" @click="tab = 3") Ход исполнения
 
 	.fix.main
 		transition(name="fade" mode="out-in")
-			Main(v-if="tab === 1")
+			Main(v-show="tab === 1")
 	.fix.attr
 		transition(name="fade" mode="out-in")
-			Attributes(v-if="tab === 1")
+			Attributes(v-show="tab === 1 && !$vuetify.breakpoint.xs && !$vuetify.breakpoint.sm")
 	.fix.sogl
 		transition(name="fade" mode="out-in")
-			Attributes(v-if="tab === 2")
+			Sogl(v-show="tab === 2") Ход согласования
+	.fix.sogl
+		transition(name="fade" mode="out-in")
+			Sogl(v-show="tab === 3") Ход исполнения
 
 </template>
 
@@ -26,6 +29,7 @@ import Zag from '@/components/Zag'
 import AppButtons from '@/components/AppButtons'
 import Attributes from '@/components/Attributes'
 import Main from '@/components/Main'
+import Sogl from '@/components/Sogl'
 
 
 
@@ -41,6 +45,7 @@ export default {
 		AppButtons,
 		Attributes,
 		Main,
+		Sogl,
 	},
 
 	data () {
@@ -96,16 +101,19 @@ export default {
 		justify-content: flex-start;
 		@media (max-width: 1264px) {
 			grid-column: 1/15;
+			grid-row: 3/4;
 		}
 	}
 
 	.main {
 		grid-column: 1/11;
+		grid-row: 3/5;
 		@media (max-width: 1264px) {
 			grid-column: 1/10;
+			grid-row: 4/5;
 		}
 		@media (max-width: 960px) {
-			grid-column: 1/10;
+			grid-column: 1/15;
 		}
 		@media (max-width: 800px) {
 			grid-column: 1/15;
@@ -113,19 +121,26 @@ export default {
 	}
 	.attr {
 		grid-column: 11/15;
+		grid-row: 3/5;
 		@media (max-width: 1264px) {
 			grid-column: 10/15;
+			grid-row: 4/5;
 		}
 		@media (max-width: 960px) {
-			grid-column: 10/15;
+			display: none;
+			/* grid-column: 10/15; */
 		}
-		@media (max-width: 800px) {
-			grid-column: 1/15;
-		}
+		/* @media (max-width: 800px) { */
+		/* 	grid-column: 1/15; */
+		/* 	grid-row: 5/6; */
+		/* } */
 	}
-
 	.sogl {
 		grid-column: 1/15;
+		grid-row: 3/5;
+		@media (max-width: 1264px) {
+			grid-row: 4/5;
+		}
 	}
 }
 .tab {
@@ -141,8 +156,6 @@ export default {
 	&.active {
 		font-weight: 500;
 		border-top: 2px solid black;
-
 	}
-
 }
 </style>

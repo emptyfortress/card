@@ -42,7 +42,7 @@
 				.blockhd.rel Мои задания (3)
 			v-expansion-panel-content
 				Tasks
-
+		Attr(v-if="$vuetify.breakpoint.smAndDown")
 </template>
 
 <script>
@@ -50,6 +50,7 @@ import Files from '@/components/Files'
 import Link from '@/components/Link'
 import Link1 from '@/components/Link1'
 import Tasks from '@/components/Tasks'
+import Attr from '@/components/Attr'
 
 
 
@@ -62,12 +63,13 @@ export default {
 		Link,
 		Link1,
 		Tasks,
+		Attr,
 	},
 	methods: {
 		toggleAll () {
 			if (!this.expanded) {
 				this.expanded = true
-				this.panels = [0, 1, 2, 3]
+				this.panels = [0, 1, 2, 3, 4]
 			} else {
 				this.expanded = false
 				this.panels = []

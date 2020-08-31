@@ -20,7 +20,10 @@ export default {
 		block () {
 			if (this.$vuetify.breakpoint.lg) {
 				return true
-			} else return false
+			}  else if (this.$vuetify.breakpoint.xs) {
+				return true
+			}
+			else return false
 		},
 	},
 
