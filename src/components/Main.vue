@@ -56,7 +56,7 @@ import Attr from '@/components/Attr'
 
 export default {
 	data: () => ({
-		panels: []
+		panels: [0]
 	}),
 	components: {
 		Files,

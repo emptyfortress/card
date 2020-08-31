@@ -4,7 +4,7 @@
 		Zag
 	.fix.but
 		AppButtons(:color="maincolor")
-	.fix.tabs
+	.fix.tabs.mt-3
 		.tab(:class="{'active' : tab === 1}" @click="tab = 1") Главная
 		.tab(:class="{'active' : tab === 2}" @click="tab = 2") Ход согласования
 		.tab(:class="{'active' : tab === 3}" @click="tab = 3") Ход исполнения

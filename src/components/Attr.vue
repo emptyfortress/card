@@ -14,6 +14,7 @@ v-expansion-panel(value="4")
 <script>
 
 export default {
+	props: ['one'],
 	data: () => ({
 		attributes: [
 			{ id:  0, label: 'Вид СЗ', value: 'СЗ общая' },
