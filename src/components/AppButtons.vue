@@ -18,7 +18,7 @@ export default {
 	},
 	computed: {
 		block () {
-			if (this.$vuetify.breakpoint.sm) {
+			if (this.$vuetify.breakpoint.smOnly) {
 				return false
 			} else return true
 		},

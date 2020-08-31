@@ -18,7 +18,7 @@
 
 export default {
 	data: () => ({
-		one: 0,
+		one: null,
 		attributes: [
 			{ id:  0, label: 'Вид СЗ', value: 'СЗ общая' },
 			{ id:  1, label: 'Рег. №', value: '16-1' },
@@ -56,6 +56,10 @@ export default {
 	gap: .7rem .5rem;
 	font-size: .85rem;
 	line-height: 100%;
+	@media (max-width: 800px) {
+		font-size: 1rem;
+		
+	}
 	.label {
 		color: #777;
 	}

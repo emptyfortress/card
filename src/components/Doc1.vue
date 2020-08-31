@@ -4,12 +4,8 @@
 		Zag
 	.fix.but
 		AppButtons(:color="maincolor")
-	.fix.main  
-		p основная.область
-		p основная.область
-		p основная.область
-		p основная.область
-		p основная.область
+	.fix.main
+		Main
 	.fix.attr
 		Attributes
 
@@ -19,6 +15,7 @@
 import Zag from '@/components/Zag'
 import AppButtons from '@/components/AppButtons'
 import Attributes from '@/components/Attributes'
+import Main from '@/components/Main'
 
 
 
@@ -33,6 +30,7 @@ export default {
 		Zag,
 		AppButtons,
 		Attributes,
+		Main,
 	},
 
 	data () {
@@ -50,10 +48,10 @@ export default {
 	margin-bottom: 5rem;
 	display: grid;
 	gap: 2rem;
-	grid-template-columns: repeat(8, 1fr);
-	/* @media (max-width: 960px) { */
-	/* 	gap: 1rem; */
-	/* } */
+	grid-template-columns: repeat(14, 1fr);
+	@media (max-width:1264px) {
+		gap: 2rem 1rem;
+	}
 	> div {
 		background: #ccc;
 		display: flex;
@@ -65,41 +63,45 @@ export default {
 		display: block;
 	}
 	.zg {
-		grid-column: span 6;
+		grid-column: 1/11;
 		@media (max-width: 1264px) {
-			grid-column: span 8;
+			grid-column: 1/15;
 		}
 	}
 	.but {
-		grid-column: span 2;
+		grid-column: 11/15;
 		@media (max-width: 1264px) {
-			grid-column: 7/9;
+			grid-column: 10/15;
 			grid-row: 2/3;
 		}
 		@media (max-width: 960px) {
-			grid-column: 1/9;
+			grid-column: 1/15;
 			grid-row: 2/3;
 		}
 	}
 	.main {
-		grid-column: span 6;
+		grid-column: 1/11;
 		grid-row: span 2;
-		/* height: 300px; */
+		@media (max-width: 1264px) {
+			grid-column: 1/10;
+		}
 		@media (max-width: 960px) {
-			grid-column: 1/6;
+			grid-column: 1/10;
 		}
 		@media (max-width: 800px) {
-			grid-column: 1/9;
+			grid-column: 1/15;
 		}
 	}
 	.attr {
-		grid-column: 7/9;
-		/* height: 200px; */
+		grid-column: 11/15;
+		@media (max-width: 1264px) {
+			grid-column: 10/15;
+		}
 		@media (max-width: 960px) {
-			grid-column: 6/9;
+			grid-column: 10/15;
 		}
 		@media (max-width: 800px) {
-			grid-column: 1/9;
+			grid-column: 1/15;
 		}
 	}
 }
