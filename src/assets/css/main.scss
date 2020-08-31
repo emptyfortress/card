@@ -46,3 +46,20 @@
 	margin-right: .5rem;
 	flex-shrink: 1;
 }
+
+// animation 
+.fade-enter-active, .fade-leave-active {
+  transition: all .5s ease;
+	position: absolute;
+}
+
+.fade-enter, .fade-leave-to {
+	opacity: 0;
+}
+.fade-enter {
+	transform: translateX(100px);
+}
+.fade-leave-to {
+	transform: translateX(-100px);
+}
+

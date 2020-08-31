@@ -4,15 +4,20 @@
 		Zag
 	.fix.but
 		AppButtons(:color="maincolor")
-	v-tabs.tabs.fix
-		v-tab Item One
-		v-tab Item Two
-		v-tab Item Three
+	.tabs.fix
+		.tab(:class="{'active' : tab === 1}" @click="tab = 1") Главная
+		.tab(:class="{'active' : tab === 2}" @click="tab = 2") Ход согласования
+		.tab(:class="{'active' : tab === 3}" @click="tab = 3") Ход исполнения
 
-	//- .fix.main
-	//- 	Main
-	//- .fix.attr
-	//- 	Attributes
+	.fix.main
+		transition(name="fade" mode="out-in")
+			Main(v-if="tab === 1")
+	.fix.attr
+		transition(name="fade" mode="out-in")
+			Attributes(v-if="tab === 1")
+	.fix.sogl
+		transition(name="fade" mode="out-in")
+			Attributes(v-if="tab === 2")
 
 </template>
 
@@ -40,6 +45,7 @@ export default {
 
 	data () {
 		return {
+			tab: 1,
 		}
 	}
 }
@@ -54,9 +60,6 @@ export default {
 	display: grid;
 	gap: 1rem 2rem;
 	grid-template-columns: repeat(14, 1fr);
-	@media (max-width:1264px) {
-		gap: 2rem 1rem;
-	}
 	> div {
 		background: #ccc;
 		display: flex;
@@ -66,6 +69,7 @@ export default {
 	.fix {
 		background: none;
 		display: block;
+		position: relative;
 	}
 	.zg {
 		grid-column: 1/11;
@@ -77,7 +81,7 @@ export default {
 		grid-column: 11/15;
 		grid-row: 1/3;
 		@media (max-width: 1264px) {
-			grid-column: 10/15;
+			grid-column: 1/15;
 			grid-row: 2/3;
 		}
 		@media (max-width: 960px) {
@@ -88,12 +92,15 @@ export default {
 	.tabs {
 		grid-column: 1/11;
 		border-top: 1px solid #ccc;
+		display: flex;
+		justify-content: flex-start;
+		@media (max-width: 1264px) {
+			grid-column: 1/15;
+		}
 	}
-
 
 	.main {
 		grid-column: 1/11;
-		grid-row: span 2;
 		@media (max-width: 1264px) {
 			grid-column: 1/10;
 		}
@@ -116,5 +123,26 @@ export default {
 			grid-column: 1/15;
 		}
 	}
+
+	.sogl {
+		grid-column: 1/15;
+	}
+}
+.tab {
+	text-transform: uppercase;
+	padding: .4rem 1rem;
+	cursor: pointer;
+	color: #666;
+	transition: .2s ease all;
+	border-top: 2px solid transparent;
+	&:hover {
+		background: #dedede;
+	}
+	&.active {
+		font-weight: 500;
+		border-top: 2px solid black;
+
+	}
+
 }
 </style>

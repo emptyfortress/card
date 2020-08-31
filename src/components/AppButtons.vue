@@ -2,9 +2,9 @@
 .action
 	v-btn(depressed :color="color" dark :block="block" ) На согласование
 	v-btn(depressed color="blue-grey lighten-4" :block="block") На доработку
-	v-btn(text :block="block" v-show="$vuetify.breakpoint.mdAndUp || $vuetify.breakpoint.xs") Ещё
-	v-btn(depressed color="blue-grey lighten-4" v-show="$vuetify.breakpoint.sm") В архив
-	v-btn(outlined color="pink" v-show="$vuetify.breakpoint.sm") Удалить
+	v-btn(text :block="block" v-show="block") Ещё
+	v-btn(depressed color="blue-grey lighten-4" v-show="!block") В архив
+	v-btn(outlined color="pink" v-show="!block") Удалить
 
 </template>
 
@@ -18,9 +18,9 @@ export default {
 	},
 	computed: {
 		block () {
-			if (this.$vuetify.breakpoint.smOnly) {
-				return false
-			} else return true
+			if (this.$vuetify.breakpoint.lg) {
+				return true
+			} else return false
 		},
 	},
 
