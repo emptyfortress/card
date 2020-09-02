@@ -5,7 +5,7 @@
 			v-expansion-panel-header
 				.blockhd.rel Информация
 			v-expansion-panel-content
-				.section
+				.section(v-if="grid")
 					template(v-for="item in attributes")
 						.label(:class="item.clas") {{ item.label }}:
 						.value(v-if="item.id === 13")
@@ -18,6 +18,18 @@
 						.check(v-if="item.id === 12")
 							|<span>&#9886;</span> По договорной деятельности<br>
 							|<span>&#9886;</span> Конфиденциально<br>
+				.new(v-else v-for="item in attributes")
+					.label(:class="item.clas") {{ item.label }}:
+					.value(v-if="item.id === 13")
+						v-icon(small v-if="item.icon") mdi-calendar
+						|{{ item.value[0] }}<br>{{ item.value[1] }}<br>{{ item.value[2] }}
+					.value(v-else)
+						v-icon(small v-if="item.icon") mdi-calendar
+						|{{ item.value }}
+						.check(v-if="item.id === 12")
+							|<span>&#9886;</span> По договорной деятельности<br>
+							|<span>&#9886;</span> Конфиденциально<br>
+				v-btn(text x-small @click.stop="grid = !grid" color="#aaa").mt-5 switch
 
 </template>
 
@@ -26,6 +38,7 @@
 export default {
 	data: () => ({
 		one: 0,
+		grid: true,
 		attributes: [
 			{ id:  0, label: 'Вид СЗ', value: 'СЗ на предоставление доступа' },
 			{ id:  1, label: 'Рег. №', value: '16-8' },
@@ -68,8 +81,7 @@ export default {
 	line-height: 100%;
 	@media (max-width: 800px) {
 		font-size: 1rem;
-		
-	}
+}
 	.label {
 		color: #777;
 	}
@@ -84,7 +96,6 @@ export default {
 		&:hover {
 			border-bottom: 1px dotted $link;
 		}
-
 	}
 }
 .check {
@@ -94,6 +105,27 @@ export default {
 	span {
 		font-size: 1.0rem;
 		margin-right: .3rem;
+	}
+}
+.new {
+	display: flex;
+	font-size: 0.85rem;
+	line-height: 100%;
+	margin-bottom: 7px;
+	.label {
+		color: #777;
+		margin-right: .5rem;
+	}
+	.value {
+		color: $link;
+		cursor: pointer;
+		border-bottom: 1px dotted #fff;
+		&:hover {
+			border-bottom: 1px dotted $link;
+		}
+	} 
+	.check {
+		flex: 1 1 100%;
 	}
 }
 </style>

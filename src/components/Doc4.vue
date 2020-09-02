@@ -109,7 +109,7 @@ export default {
 	}
 
 	.main {
-		grid-column: 1/12;
+		grid-column: 1/10;
 		grid-row: 3/5;
 		@media (max-width: 1264px) {
 			grid-column: 1/11;
@@ -123,7 +123,7 @@ export default {
 		}
 	}
 	.attr {
-		grid-column: 12/17;
+		grid-column: 10/17;
 		grid-row: 3/5;
 		@media (max-width: 1264px) {
 			grid-column: 11/17;

@@ -7,6 +7,8 @@ import Doc from '@/components/Doc'
 import Doc1 from '@/components/Doc1'
 import Doc2 from '@/components/Doc2'
 import Doc3 from '@/components/Doc3'
+import Doc4 from '@/components/Doc4'
+import Doc5 from '@/components/Doc5'
 
 Vue.use(VueRouter)
 
@@ -52,6 +54,22 @@ const routes = [
 		path: '/doc3',
 		name: 'doc3',
 		component: Doc3,
+		props: {
+			maincolor: 'docolor'
+		},
+	},
+	{
+		path: '/doc4',
+		name: 'doc4',
+		component: Doc4,
+		props: {
+			maincolor: 'docolor'
+		},
+	},
+	{
+		path: '/doc5',
+		name: 'doc5',
+		component: Doc5,
 		props: {
 			maincolor: 'docolor'
 		},
