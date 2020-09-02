@@ -93,7 +93,7 @@ export default {
 			grid-row: 2/3;
 		}
 		@media (max-width: 960px) {
-			grid-column: 1/15;
+			grid-column: 1/17;
 			grid-row: 2/3;
 		}
 	}
