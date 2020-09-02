@@ -64,7 +64,10 @@ export default {
 	margin-bottom: 5rem;
 	display: grid;
 	gap: 1rem 2rem;
-	grid-template-columns: repeat(14, 1fr);
+	grid-template-columns: repeat(16, 1fr);
+	@media (max-width: 1264px) {
+		gap: 1rem;
+	}
 	> div {
 		background: #ccc;
 		display: flex;
@@ -79,14 +82,14 @@ export default {
 	.zg {
 		grid-column: 1/12;
 		@media (max-width: 1264px) {
-			grid-column: 1/15;
+			grid-column: 1/17;
 		}
 	}
 	.but {
-		grid-column: 12/15;
+		grid-column: 12/17;
 		grid-row: 1/3;
 		@media (max-width: 1264px) {
-			grid-column: 1/15;
+			grid-column: 1/17;
 			grid-row: 2/3;
 		}
 		@media (max-width: 960px) {
@@ -95,35 +98,35 @@ export default {
 		}
 	}
 	.tabs {
-		grid-column: 1/11;
+		grid-column: 1/12;
 		border-top: 1px solid #ccc;
 		display: flex;
 		justify-content: flex-start;
 		@media (max-width: 1264px) {
-			grid-column: 1/15;
+			grid-column: 1/17;
 			grid-row: 3/4;
 		}
 	}
 
 	.main {
-		grid-column: 1/10;
+		grid-column: 1/12;
 		grid-row: 3/5;
 		@media (max-width: 1264px) {
-			grid-column: 1/10;
+			grid-column: 1/11;
 			grid-row: 4/5;
 		}
 		@media (max-width: 960px) {
-			grid-column: 1/15;
+			grid-column: 1/17;
 		}
 		@media (max-width: 800px) {
-			grid-column: 1/15;
+			grid-column: 1/17;
 		}
 	}
 	.attr {
-		grid-column: 10/15;
+		grid-column: 12/17;
 		grid-row: 3/5;
 		@media (max-width: 1264px) {
-			grid-column: 10/15;
+			grid-column: 11/17;
 			grid-row: 4/5;
 		}
 		@media (max-width: 960px) {
@@ -136,7 +139,7 @@ export default {
 		/* } */
 	}
 	.sogl {
-		grid-column: 1/15;
+		grid-column: 1/17;
 		grid-row: 3/5;
 		@media (max-width: 1264px) {
 			grid-row: 4/5;

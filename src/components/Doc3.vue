@@ -3,7 +3,7 @@
 	.fix.zg
 		Zag
 	div.but  кнопки действий
-	div.main  основная.область
+	div.main  основная область
 	div.attr атрибуты
 
 </template>
@@ -37,7 +37,6 @@ export default {
 	display: grid;
 	gap: .5rem;
 	grid-template-columns: repeat(8, 1fr);
-	/* grid-template-rows: repeat (min-content, auto); */
 	> div {
 		background: #ccc;
 		display: flex;
@@ -51,24 +50,17 @@ export default {
 	}
 	.zg {
 		grid-column: span 6;
-		@media (max-width: 1200px) {
+		@media (max-width: 1264px) {
 			grid-column: span 8;
 		}
 	}
 	.but {
 		grid-column: span 2;
-		grid-row: span 2;
-		/* height: 150px; */
-		@media (max-width: 1200px) {
+		@media (max-width: 1264px) {
 			grid-column: 1/9;
 			grid-row: 2/3;
 			min-height: 50px;
 		}
-		/* @media (max-width: 900px) { */
-		/* 	grid-column: 1/9; */
-		/* 	grid-row: 2/3; */
-		/* 	height: 50px; */
-		/* } */
 	}
 	.main {
 		grid-column: span 6;
@@ -82,8 +74,9 @@ export default {
 		}
 	}
 	.attr {
+		min-height: 50px;
 		grid-column: 7/9;
-		height: 200px;
+		grid-row: span 2;
 		@media (max-width: 900px) {
 			grid-column: 6/9;
 		}

@@ -8,7 +8,6 @@
 				.section
 					template(v-for="item in attributes")
 						.label(:class="item.clas") {{ item.label }}:
-						//- 	v-checkbox(dense label="test")
 						.value(v-if="item.id === 13")
 							v-icon(small v-if="item.icon") mdi-calendar
 							|{{ item.value[0] }}<br>{{ item.value[1] }}<br>{{ item.value[2] }}

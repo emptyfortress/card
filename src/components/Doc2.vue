@@ -35,30 +35,23 @@ export default {
 		align-items: center;
 	}
 	.zg {
-		grid-column: span 6;
-		@media (max-width: 1200px) {
+		grid-column: 1/7;
+		@media (max-width: 1264px) {
 			grid-column: span 8;
 		}
 	}
 	.but {
-		grid-column: span 2;
-		grid-row: span 2;
-		/* height: 150px; */
-		@media (max-width: 1200px) {
+		grid-column: 7/9;
+		@media (max-width: 1264px) {
 			grid-column: 1/9;
 			grid-row: 2/3;
 		}
-		/* @media (max-width: 900px) { */
-		/* 	grid-column: 1/9; */
-		/* 	grid-row: 2/3; */
-		/* 	height: 50px; */
-		/* } */
 	}
 	.main {
-		grid-column: span 6;
+		grid-column: 1/7;
 		grid-row: span 2;
 		height: 300px;
-		@media (max-width: 900px) {
+		@media (max-width: 960px) {
 			grid-column: 1/6;
 		}
 		@media (max-width: 800px) {
@@ -67,8 +60,8 @@ export default {
 	}
 	.attr {
 		grid-column: 7/9;
-		height: 200px;
-		@media (max-width: 900px) {
+		grid-row: span 2;
+		@media (max-width: 960px) {
 			grid-column: 6/9;
 		}
 		@media (max-width: 800px) {
