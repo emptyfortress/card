@@ -1,6 +1,6 @@
 <template lang="pug">
 .main
-	v-expansion-panels(tile flat v-model="panels" multiple inset name="main")
+	v-expansion-panels(tile flat v-model="panels" multiple name="main")
 		v-expansion-panel(value="0")
 			v-expansion-panel-header
 				.blockhd Основные файлы (3)

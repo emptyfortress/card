@@ -6,6 +6,7 @@ import Task from '@/components/Task'
 import Doc from '@/components/Doc'
 import Doc1 from '@/components/Doc1'
 import Doc2 from '@/components/Doc2'
+import Doc3 from '@/components/Doc3'
 
 Vue.use(VueRouter)
 
@@ -43,6 +44,14 @@ const routes = [
 		path: '/doc2',
 		name: 'doc2',
 		component: Doc2,
+		props: {
+			maincolor: 'docolor'
+		},
+	},
+	{
+		path: '/doc3',
+		name: 'doc3',
+		component: Doc3,
 		props: {
 			maincolor: 'docolor'
 		},

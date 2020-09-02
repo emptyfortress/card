@@ -24,9 +24,10 @@ export default {
 			},
 			menu: [
 				{ id: 0, url: '/', icon: 'mdi-home-roof', text: 'Главная' },
-				{ id: 1, url: '/doc', icon: 'mdi-file-image-outline', text: 'Схема 1' },
-				{ id: 2, url: '/doc2', icon: 'mdi-file-image-outline', text: 'Схема 2' },
-				{ id: 3, url: '/doc1', icon: 'mdi-file-code-outline', text: 'Верстка 2' },
+				// { id: 1, url: '/doc', icon: 'mdi-file-image-outline', text: 'Схема 1' },
+				{ id: 2, url: '/doc2', icon: 'mdi-file-image-outline', text: 'Схема' },
+				{ id: 2, url: '/doc3', icon: 'mdi-file-image-outline', text: 'Схема 1' },
+				{ id: 3, url: '/doc1', icon: 'mdi-file-code-outline', text: 'Верстка' },
 				{ id: 4, url: '/task', icon: 'mdi-folder-outline', text: 'Задания' },
 				{ id: 5, url: '/folder', icon: 'mdi-folder-outline', text: 'Папка' },
 			],

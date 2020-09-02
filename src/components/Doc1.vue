@@ -77,13 +77,13 @@ export default {
 		position: relative;
 	}
 	.zg {
-		grid-column: 1/11;
+		grid-column: 1/12;
 		@media (max-width: 1264px) {
 			grid-column: 1/15;
 		}
 	}
 	.but {
-		grid-column: 11/15;
+		grid-column: 12/15;
 		grid-row: 1/3;
 		@media (max-width: 1264px) {
 			grid-column: 1/15;
@@ -106,7 +106,7 @@ export default {
 	}
 
 	.main {
-		grid-column: 1/11;
+		grid-column: 1/10;
 		grid-row: 3/5;
 		@media (max-width: 1264px) {
 			grid-column: 1/10;
@@ -120,7 +120,7 @@ export default {
 		}
 	}
 	.attr {
-		grid-column: 11/15;
+		grid-column: 10/15;
 		grid-row: 3/5;
 		@media (max-width: 1264px) {
 			grid-column: 10/15;

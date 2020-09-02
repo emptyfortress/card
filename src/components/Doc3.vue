@@ -1,6 +1,7 @@
 <template lang="pug">
 .doc
-	div.zg  заголовок
+	.fix.zg
+		Zag
 	div.but  кнопки действий
 	div.main  основная.область
 	div.attr атрибуты
@@ -8,12 +9,22 @@
 </template>
 
 <script>
+import Zag from '@/components/Zag'
 
 export default {
+	props: {
+		maincolor: {
+			type: String,
+			default: 'dark'
+		}
+	},
 	data () {
 		return {
 		}
-	}
+	},
+	components: {
+		Zag,
+	},
 }
 
 </script>
@@ -26,13 +37,17 @@ export default {
 	display: grid;
 	gap: .5rem;
 	grid-template-columns: repeat(8, 1fr);
-	grid-template-rows: repeat (min-content, auto);
+	/* grid-template-rows: repeat (min-content, auto); */
 	> div {
 		background: #ccc;
-		min-height: 50px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+	.fix {
+		background: none;
+		display: block;
+		position: relative;
 	}
 	.zg {
 		grid-column: span 6;
@@ -47,6 +62,7 @@ export default {
 		@media (max-width: 1200px) {
 			grid-column: 1/9;
 			grid-row: 2/3;
+			min-height: 50px;
 		}
 		/* @media (max-width: 900px) { */
 		/* 	grid-column: 1/9; */

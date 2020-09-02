@@ -8,9 +8,17 @@
 				.section
 					template(v-for="item in attributes")
 						.label(:class="item.clas") {{ item.label }}:
-						.value 
+						//- 	v-checkbox(dense label="test")
+						.value(v-if="item.id === 13")
+							v-icon(small v-if="item.icon") mdi-calendar
+							|{{ item.value[0] }}<br>{{ item.value[1] }}<br>{{ item.value[2] }}
+						.value(v-else)
 							v-icon(small v-if="item.icon") mdi-calendar
 							|{{ item.value }}
+
+						.check(v-if="item.id === 12")
+							|<span>&#9886;</span> По договорной деятельности<br>
+							|<span>&#9886;</span> Конфиденциально<br>
 
 </template>
 
@@ -20,20 +28,26 @@ export default {
 	data: () => ({
 		one: 0,
 		attributes: [
-			{ id:  0, label: 'Вид СЗ', value: 'СЗ общая' },
-			{ id:  1, label: 'Рег. №', value: '16-1' },
+			{ id:  0, label: 'Вид СЗ', value: 'СЗ на предоставление доступа' },
+			{ id:  1, label: 'Рег. №', value: '16-8' },
 			{ id:  2, label: 'Дата рег.', value: '16.06.20', icon: true },
-			{ id:  3, label: 'Автор докум.', value: 'Макарова О.Л.' },
-			{ id:  4, label: 'Подразд.', value: '16 ОАП - Отдел автомазации проектированияи инф.технологий' },
-			{ id:  5, label: 'Тема', value: 'О создании рабочей группы' },
-			{ id:  6, label: 'Подписывает', value: 'Лебедской-Тамбиев М.А.' },
-			{ id:  7, label: 'Примеч.', value: 'Макет карточки' },
-			{ id:  8, label: 'Исполнители', value: 'Агаева И.' },
-			{ id:  9, label: 'Дата испол.', value: '18.06.20', icon: true },
-			{ id: 10, label: 'В отделы', value: 'ОАП, ТО' },
-			{ id: 11, label: 'Предв. №', value: '96-2020' },
-			{ id: 12, label: 'Дата созд.', value: '16.06.2020 19:25' },
-			{ id: 13, label: 'Создал', value: 'Сергиенко К.' },
+			{ id:  3, label: 'Автор докум.', value: 'Макарова Е.В.' },
+			{ id:  4, label: 'Тел. автора', value: '8 904 230-45-32' },
+			{ id:  5, label: 'Подразд.', value: '16 ОАП - Отдел автомазации проектированияи инф.технологий' },
+			{ id:  6, label: 'Тема', value: 'О создании рабочей группы' },
+			{ id:  7, label: 'Подписывает', value: 'Лебедской-Тамбиев М.А.' },
+			{ id:  8, label: 'ГИП', value: 'dv3_ГИП, Юзер3' },
+			{ id:  9, label: 'Примечание', value: 'Макет карточки макет карточки макет карточки' },
+			{ id: 10, label: 'Проект', value: 'Проект А' },
+			{ id: 11, label: 'Приоритет', value: 'средний' },
+			{ id: 12, label: 'Тип документации', value: 'Нестандартизированное оборудование' },
+			{ id: 13, label: 'Исполнители', value: ['Агаева И.', 'Петрова С.', 'Булочкина К.']},
+			{ id: 14, label: 'Дата испол.', value: '18.06.20', icon: true },
+			{ id: 15, label: 'Копия', value: 'Павленикова А.Г.', },
+			{ id: 16, label: 'В отделы', value: 'ОАП, ТО' },
+			{ id: 17, label: 'Предв. №', value: '96-2020' },
+			{ id: 18, label: 'Дата созд.', value: '16.06.2020 19:25' },
+			{ id: 19, label: 'Создал', value: 'Сергиенко К.' },
 		],
 	}),
 
@@ -72,6 +86,15 @@ export default {
 			border-bottom: 1px dotted $link;
 		}
 
+	}
+}
+.check {
+	color: #666;
+	margin-top: .5rem;
+	grid-column: span 2;
+	span {
+		font-size: 1.0rem;
+		margin-right: .3rem;
 	}
 }
 </style>

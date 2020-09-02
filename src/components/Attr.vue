@@ -50,13 +50,14 @@ export default {
 .section {
 	display: grid;
 	grid-template-columns: 1fr 2fr;
+	/* grid-auto-flow: column; */
 	gap: .7rem .5rem;
 	font-size: .85rem;
 	line-height: 100%;
-	@media (max-width: 800px) {
-		font-size: 1rem;
+	/* @media (max-width: 800px) { */
+	/* 	font-size: 1rem; */
 		
-	}
+	/* } */
 	.label {
 		color: #777;
 	}
