@@ -15,7 +15,7 @@
 									.value(v-bind="attrs" v-on="on")
 										v-icon(small) mdi-calendar
 										|{{ item.value }}
-								v-date-picker
+								v-date-picker(v-model="item.value")
 
 						template(v-if="item.id === 13")
 							.label(:class="item.clas") {{ item.label }}:
@@ -23,7 +23,7 @@
 
 						template(v-if="item.id !== 2 && item.id !== 13 && item.id !== 14 && item.id !== 18")
 							.label(:class="item.clas") {{ item.label }}:
-							.value(:contenteditable="item.edit") {{ item.value }}
+							.value.rel(:contenteditable="item.edit") {{ item.value }}
 							.check(v-if="item.id === 12")
 								|<span>&#9886;</span> По договорной деятельности<br>
 								|<span>&#9886;</span> Конфиденциально<br>
@@ -51,9 +51,9 @@ export default {
 		items: ['one', 'two', 'three'],
 		grid: true,
 		attributes: [
-			{ id:  0, label: 'Вид СЗ', value: 'СЗ на предоставление доступа' },
+			{ id:  0, label: 'Вид СЗ', value: 'СЗ на предоставление доступа', list: false },
 			{ id:  1, label: 'Рег. №', value: '16-8', edit: true },
-			{ id:  2, label: 'Дата рег.', value: '16.06.20', icon: true, date: false },
+			{ id:  2, label: 'Дата рег.', value: '2020-09-09', icon: true, date: false },
 			{ id:  3, label: 'Автор докум.', value: 'Макарова Е.В.' },
 			{ id:  4, label: 'Тел. автора', value: '8 904 230-45-32', edit: true },
 			{ id:  5, label: 'Подразд.', value: '16 ОАП - Отдел автомазации проектированияи инф.технологий' },
@@ -65,11 +65,11 @@ export default {
 			{ id: 11, label: 'Приоритет', value: 'средний' },
 			{ id: 12, label: 'Тип документации', value: 'Нестандартизированное оборудование' },
 			{ id: 13, label: 'Исполнители', value: ['Агаева И.', 'Петрова С.', 'Булочкина К.']},
-			{ id: 14, label: 'Дата испол.', value: '18.06.20', icon: true, date: false },
+			{ id: 14, label: 'Дата испол.', value: '2020-09-09', icon: true, date: false },
 			{ id: 15, label: 'Копия', value: 'Павленикова А.Г.', },
 			{ id: 16, label: 'В отделы', value: 'ОАП, ТО' },
 			{ id: 17, label: 'Предв. №', value: '96-2020' },
-			{ id: 18, label: 'Дата созд.', value: '16.06.2020 19:25', icon: true, date: false },
+			{ id: 18, label: 'Дата созд.', value: '2020-09-09', icon: true, date: false },
 			{ id: 19, label: 'Создал', value: 'Сергиенко К.' },
 		],
 	}),
@@ -146,7 +146,11 @@ export default {
 	}
 }
 .test {
-	width: 100%;
+	transition: .3s ease all;
+	position: absolute;
+	top: 10px;
+	left: 50px;
+	width: 100px;
 	height: 50px;
 	background: red;
 }
