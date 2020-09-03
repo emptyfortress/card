@@ -111,7 +111,7 @@ export default {
 		grid-column: 7/17;
 		grid-row: 3/5;
 		@media (max-width: 1264px) {
-			grid-column: 7/16;
+			grid-column: 7/17;
 			grid-row: 4/5;
 		}
 		@media (max-width: 960px) {

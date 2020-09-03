@@ -31,6 +31,10 @@
 							|<span>&#9886;</span> Конфиденциально<br>
 				v-btn(text x-small @click.stop="grid = !grid" color="#aaa").mt-5 switch
 
+				v-menu(v-model="menu2" :close-on-content-click="true" :nudge-right="40" transition="scale-transition" offset-y min-width="290px")
+					template(v-slot:activator="{ on, attrs }")
+						.value(v-bind="attrs" v-on="on") {{date}}
+					v-date-picker
 </template>
 
 <script>
@@ -39,6 +43,8 @@ export default {
 	data: () => ({
 		one: 0,
 		grid: true,
+		menu2: false,
+		date: '03.09.2020',
 		attributes: [
 			{ id:  0, label: 'Вид СЗ', value: 'СЗ на предоставление доступа' },
 			{ id:  1, label: 'Рег. №', value: '16-8' },
