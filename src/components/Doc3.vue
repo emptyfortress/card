@@ -1,6 +1,6 @@
 <template lang="pug">
-.doc
-	.fix.zg
+div.doc
+	div.fix.zg
 		Zag
 	div.but  кнопки действий
 	div.main  основная область
@@ -16,10 +16,6 @@ export default {
 		maincolor: {
 			type: String,
 			default: 'dark'
-		}
-	},
-	data () {
-		return {
 		}
 	},
 	components: {
@@ -46,7 +42,7 @@ export default {
 	.fix {
 		background: none;
 		display: block;
-		position: relative;
+		/* position: relative; */
 	}
 	.zg {
 		grid-column: span 6;

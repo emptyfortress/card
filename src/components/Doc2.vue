@@ -2,21 +2,10 @@
 .doc
 	div.zg  заголовок
 	div.but  кнопки действий
-	div.main  основная.область
+	div.main  основная область
 	div.attr атрибуты
 
 </template>
-
-<script>
-
-export default {
-	data () {
-		return {
-		}
-	}
-}
-
-</script>
 
 <style scoped lang="scss">
 @import '@/assets/css/colors.scss';
@@ -36,12 +25,15 @@ export default {
 	}
 	.zg {
 		grid-column: 1/7;
+		grid-row: 1/2;
 		@media (max-width: 1264px) {
-			grid-column: span 8;
+			grid-column: 1/9;
+			grid-row: 1/2;
 		}
 	}
 	.but {
 		grid-column: 7/9;
+		grid-row: 1/2;
 		@media (max-width: 1264px) {
 			grid-column: 1/9;
 			grid-row: 2/3;

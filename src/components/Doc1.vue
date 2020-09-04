@@ -4,7 +4,7 @@
 		Zag
 	.fix.but
 		AppButtons(:color="maincolor")
-	.fix.tabs.mt-3
+	.fix.tabs
 		.tab(:class="{'active' : tab === 1}" @click="tab = 1") Главная
 		.tab(:class="{'active' : tab === 2}" @click="tab = 2") Ход согласования
 		.tab(:class="{'active' : tab === 3}" @click="tab = 3") Ход исполнения
@@ -87,7 +87,7 @@ export default {
 	}
 	.but {
 		grid-column: 12/17;
-		grid-row: 1/3;
+		grid-row: 1/4;
 		@media (max-width: 1264px) {
 			grid-column: 1/17;
 			grid-row: 2/3;
@@ -99,9 +99,10 @@ export default {
 	}
 	.tabs {
 		grid-column: 1/12;
-		border-top: 1px solid #ccc;
+		border-top: 1px solid #aaa;
 		display: flex;
 		justify-content: flex-start;
+		align-items: flex-start;
 		@media (max-width: 1264px) {
 			grid-column: 1/17;
 			grid-row: 3/4;

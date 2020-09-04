@@ -10,15 +10,6 @@
 
 </template>
 
-<script>
-
-export default {
-	data: () => ({
-	//
-	})
-}
-
-</script>
 
 <style scoped lang="scss">
 @import '@/assets/css/colors.scss';

@@ -1,7 +1,7 @@
 <template lang="pug">
 .action
 	v-btn(depressed :color="color" dark :block="block" ) На согласование
-	v-btn(depressed color="blue-grey lighten-4"  :block="block" )
+	v-btn(depressed color="blue-grey lighten-4" :block="block" )
 		i.icon-multi.mr-2
 		|Лист согласования
 	v-btn(depressed :color="color" dark  :block="block" ) Зарегистрировать

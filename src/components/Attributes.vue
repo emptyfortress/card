@@ -1,6 +1,6 @@
 <template lang="pug">
 .attr
-	v-expansion-panels(tile flat v-model="one" )
+	v-expansion-panels(tile flat v-model="one" :class="{ 'active' : edited }")
 		v-expansion-panel(value="0" )
 			v-expansion-panel-header
 				.blockhd.rel Информация
@@ -17,11 +17,23 @@
 										|{{ item.value }}
 								v-date-picker(v-model="item.value")
 
+						template(v-if="item.id === 3")
+							.label(:class="item.clas") {{ item.label }}:
+							v-menu(v-model="item.list" :close-on-content-click="false" :close-on-click="false" transition="scale-transition" offset-y min-width="200px").value
+								template(v-slot:activator="{ on, attrs }")
+									.value(v-bind="attrs" v-on="on") {{ item.value }}
+								.test(v-model="item.value")
+									v-text-field(solo flat outlined dense clearable placeholder="автор документа" v-model="item.value").search
+									v-card-actions
+										v-spacer
+										v-btn(text small color="link" @click="item.list = false") Cancel
+										v-btn(text small color="link"  @click="edit(item)") OK
+
 						template(v-if="item.id === 13")
 							.label(:class="item.clas") {{ item.label }}:
 							.value {{ item.value[0] }}<br>{{ item.value[1] }}<br>{{ item.value[2] }}
 
-						template(v-if="item.id !== 2 && item.id !== 13 && item.id !== 14 && item.id !== 18")
+						template(v-if="item.id !== 2 && item.id !== 3 && item.id !== 13 && item.id !== 14 && item.id !== 18 ")
 							.label(:class="item.clas") {{ item.label }}:
 							.value.rel(:contenteditable="item.edit") {{ item.value }}
 							.check(v-if="item.id === 12")
@@ -39,7 +51,11 @@
 						.check(v-if="item.id === 12")
 							|<span>&#9886;</span> По договорной деятельности<br>
 							|<span>&#9886;</span> Конфиденциально<br>
-				v-btn(text x-small @click.stop="grid = !grid" color="#aaa").mt-5 switch
+				v-card-actions
+					v-btn(text x-small @click.stop="grid = !grid" color="#aaa").mt-5 switch
+					v-spacer
+					v-btn(v-if="edited" text x-small @click.stop="edited = false" color="link").mt-5 Отмена
+					v-btn(v-if="edited" text x-small @click.stop="edited = false" color="link").mt-5 Сохранить
 
 </template>
 
@@ -50,11 +66,12 @@ export default {
 		one: 0,
 		items: ['one', 'two', 'three'],
 		grid: true,
+		edited: false,
 		attributes: [
-			{ id:  0, label: 'Вид СЗ', value: 'СЗ на предоставление доступа', list: false },
+			{ id:  0, label: 'Вид СЗ', value: 'СЗ на предоставление доступа' },
 			{ id:  1, label: 'Рег. №', value: '16-8', edit: true },
 			{ id:  2, label: 'Дата рег.', value: '2020-09-09', icon: true, date: false },
-			{ id:  3, label: 'Автор докум.', value: 'Макарова Е.В.' },
+			{ id:  3, label: 'Автор докум.', value: 'Макарова Е.В.', list: false },
 			{ id:  4, label: 'Тел. автора', value: '8 904 230-45-32', edit: true },
 			{ id:  5, label: 'Подразд.', value: '16 ОАП - Отдел автомазации проектированияи инф.технологий' },
 			{ id:  6, label: 'Тема', value: 'О создании рабочей группы', edit: true  },
@@ -73,7 +90,15 @@ export default {
 			{ id: 19, label: 'Создал', value: 'Сергиенко К.' },
 		],
 	}),
-
+	methods: {
+		edit (e) {
+			e.list = !e.list
+			let that = this
+			setTimeout(function() {
+				that.edited = true
+			},1000)
+		}
+	},
 }
 
 </script>
@@ -83,6 +108,9 @@ export default {
 
 .v-expansion-panel-header .blockhd {
 	flex-grow: 1;
+}
+.active {
+	border: 1px dashed red;
 }
 .section {
 	display: grid;
@@ -146,13 +174,16 @@ export default {
 	}
 }
 .test {
-	transition: .3s ease all;
-	position: absolute;
-	top: 10px;
-	left: 50px;
-	width: 100px;
-	height: 50px;
-	background: red;
+	width: 100%;
+	background: #fff;
+	padding: .5rem;
+	font-size: 0.9rem;
+	.search {
+		font-size: 0.9rem;
+		padding: .5rem;
+		margin: 0;
+		height: 52px;
+	}
 }
 </style>
 
